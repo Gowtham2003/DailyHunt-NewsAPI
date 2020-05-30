@@ -3,18 +3,26 @@ import json
 from bs4 import BeautifulSoup as bs
 from genUrl import getUrl
 
+
+def paraParse(newsContent):
+    soup = bs(newsContent, "lxml")
+    pTags = soup.findAll("p")
+    cont = ""
+    for i in range(len(pTags)):
+        singleTag = pTags[i].text
+        cont = cont + singleTag + "\n"
+    return cont.strip()
+
+
 def newsData(query):
     newsDictionary = {
         'success': True,
-#       'category': category,
         'data': []
     }
     URL = getUrl(query)
-
     r = requests.get(URL)
 
     responseDict = json.loads(r.content)
-
     datasDict = responseDict["data"]
 
     rows = datasDict["rows"]
@@ -59,30 +67,16 @@ def newsData(query):
             publisherStory = row["publisherStoryUrl"]
         except:
             publisherStory = ""
-
-
-        def paraParse(newsContent):
-            soup = bs(newsContent,"lxml")
-
-
-            pTags = soup.findAll("p")
-            cont = ""
-            for i in range(0,len(pTags)):
-                singleTag = pTags[i].text
-                cont += singleTag + "\n"
-            return cont
-
         newsObject = {
-                    'title': title,
-                    'imageUrl': ImageUrl,
-                    'url': url,
-                    'content': content,
-                    'PublishedTime':PublishedDt,
-                    'viewCount': viewCount,
-                    'publisherStory':publisherStory
-                }
+            'title': title,
+            'imageUrl': ImageUrl,
+            'url': url,
+            'content': content,
+            'PublishedTime': PublishedDt,
+            'viewCount': viewCount,
+            'publisherStory': publisherStory
+        }
 
         newsDictionary['data'].append(newsObject)
 
     return newsDictionary
-
