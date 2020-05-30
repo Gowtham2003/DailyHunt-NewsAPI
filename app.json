@@ -1,0 +1,11 @@
+{
+  "name": "Daily Hunts News API",
+  "description": "Unofficial API of Daily Hunt News",
+  "keywords": [
+    "flask",
+    "python",
+    "news",
+    "dailyhunt"
+  ],
+  "success_url": "https://t.me/alphaprojects"
+}
