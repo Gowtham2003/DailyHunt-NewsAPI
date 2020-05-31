@@ -15,12 +15,12 @@ def paraParse(newsContent):
     return cont.strip()
 
 
-def newsData(query):
+def newsData(query, language):
     newsDictionary = {
         'success': True,
         'data': []
     }
-    URL = getUrl(query)
+    URL = getUrl(query, language)
 
     responseDict = json.loads(requests.get(URL).content)
     rows = responseDict["data"]["rows"]
