@@ -1,3 +1,6 @@
+
+#Coded By Gowtham on 30/05/2020 
+#Coded Using Vim Text Editor
 from flask import Flask, request, jsonify
 from DailyHunt import getNews
 from flask_cors import CORS
