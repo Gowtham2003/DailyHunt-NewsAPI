@@ -20,6 +20,9 @@ queryDict = {
 def getNews(category, language):
 
     query = category.lower()
-    languageQuery = language.lower()
+    try:
+        languageQuery = language.lower()
+    except:
+        languageQuery = 'english'
 
     return newsData(queryDict[query], languageQuery)
