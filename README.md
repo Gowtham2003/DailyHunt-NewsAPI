@@ -6,6 +6,8 @@ An Unofficial Daily Hunt API Which Fetches News from Daily Hunt .
 
 ---
 
+## Support My Project If You Like 
+
 [![GitHub stars](https://img.shields.io/github/stars/gowtham2003/DailyHunt-NewsAPI.svg?style=social&label=Star)](https://github.com/gowtham2003/DailyHunt-NewsAPI)
 
 
