@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup as bs
 import base64
 
 
-def getUrl(key):
+def getUrl(key, language):
     queries = ["science-topics-20", "technology-topics-102", "india-topics-15", "automobile-topics-101", "entertainment-topics-8", "sports-topics-17", "world-topics-16",
                "lifestyle-topics-11", "employment-topics-136", "religion+spirituality-topics-135", "football-topics-495", "movie+review-topics-807", "buzz+trending-topics-791"]
 
@@ -25,7 +25,7 @@ def getUrl(key):
     }
 
     query = queryDict[key]
-    url = f"https://m.dailyhunt.in/news/india/english/{query}"
+    url = f"https://m.dailyhunt.in/news/india/{language}/{query}"
     soup = bs(requests.get(url).content, "lxml")
     encodedUrl = soup.find("input").get("value")
     URL = base64.b64decode(encodedUrl).decode('utf-8')

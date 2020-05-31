@@ -18,7 +18,9 @@ def home():
 @app.route('/news')
 def news():
     if request.method == 'GET':
-        return jsonify(getNews(request.args.get('category')))
+        category = request.args.get('category')
+        language = request.args.get('language')
+        return jsonify(getNews(category, language))
 
 
 if __name__ == '__main__':

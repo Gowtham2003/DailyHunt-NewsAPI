@@ -17,8 +17,9 @@ queryDict = {
 }
 
 
-def getNews(category):
+def getNews(category, language):
 
     query = category.lower()
+    languageQuery = language.lower()
 
-    return newsData(queryDict[query])
+    return newsData(queryDict[query], languageQuery)
