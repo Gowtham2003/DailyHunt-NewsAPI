@@ -6,7 +6,7 @@ An Unofficial Daily Hunt API Which Fetches News from Daily Hunt .
 
 ---
 
-#News Categories 
+## News Categories 
 
 ---
 
