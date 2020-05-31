@@ -1,7 +1,7 @@
 # Coded By Gowtham on 30/05/2020
 # Coded Using Vim Text Editor
 import requests
-from bs4 import BeautifulSoup as bs 
+from bs4 import BeautifulSoup as bs
 import base64
 
 
@@ -22,22 +22,12 @@ def getUrl(key):
         'rel': queries[9],
         'foot': queries[10],
         'mov': queries[11]
-            }
+    }
 
     query = queryDict[key]
-
-
-
-    url =f"https://m.dailyhunt.in/news/india/english/{query}"
-
-    r = requests.get(url)
-    data = r.url
-    soup = bs(r.content,"lxml")
-
+    url = f"https://m.dailyhunt.in/news/india/english/{query}"
+    soup = bs(requests.get(url).content, "lxml")
     encodedUrl = soup.find("input").get("value")
-
-    dataDecoded = base64.b64decode(encodedUrl)
-
-    URL = dataDecoded.decode('utf-8')
+    URL = base64.b64decode(encodedUrl).decode('utf-8')
 
     return URL

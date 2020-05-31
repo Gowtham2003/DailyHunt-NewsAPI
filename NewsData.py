@@ -1,5 +1,5 @@
-#Coded By Gowtham on 30/05/2020 
-#Coded Using Vim Text Editor
+# Coded By Gowtham on 30/05/2020
+# Coded Using Vim Text Editor
 import requests
 import json
 from bs4 import BeautifulSoup as bs
@@ -11,8 +11,7 @@ def paraParse(newsContent):
     pTags = soup.findAll("p")
     cont = ""
     for i in range(len(pTags)):
-        singleTag = pTags[i].text
-        cont = cont + singleTag + "\n"
+        cont = cont + pTags[i].text + "\n"
     return cont.strip()
 
 
@@ -22,14 +21,9 @@ def newsData(query):
         'data': []
     }
     URL = getUrl(query)
-    r = requests.get(URL)
 
-    responseDict = json.loads(r.content)
-    datasDict = responseDict["data"]
-
-    rows = datasDict["rows"]
-
-    content = ""
+    responseDict = json.loads(requests.get(URL).content)
+    rows = responseDict["data"]["rows"]
 
     for row in rows:
         try:
@@ -65,10 +59,12 @@ def newsData(query):
             content = paraParse(newsContent)
         except:
             newsContent = ""
+            content = ""
         try:
             publisherStory = row["publisherStoryUrl"]
         except:
             publisherStory = ""
+
         newsObject = {
             'title': title,
             'imageUrl': ImageUrl,
