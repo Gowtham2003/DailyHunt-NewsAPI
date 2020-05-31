@@ -74,7 +74,10 @@ Example Of Daily Hunt API Response Below
       "url": "http://dhunt.in/9PC7W",
       "viewCount": "1.7k"
     }
+    ],
+     "success": true
 }
+
 
 ```
 
@@ -99,7 +102,7 @@ Install all dependencies listed in *requirements.txt* file.
 ---
 
 ### You can fork the repo and deploy on VPS or deploy it on Heroku :)  
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Gowtham2003/Inshorts-News-API/tree/master)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Gowtham2003/DailyHunt-NewsAPI/tree/master)
 
 ---
 
