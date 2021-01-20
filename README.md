@@ -50,9 +50,9 @@ An Unofficial Daily Hunt API Which Fetches News from Daily Hunt .
 
 Make a get request specifying the category of news you want
 ```
-https://dailyhunt.herokuapp.com/news?category={category_name}
+https://dailyhunt.vercel.app/news?category={category_name}
 ```
-Example - https://dailyhunt.herokuapp.com/news?category=science
+Example - https://dailyhunt.vercel.app/news?category=science
 
 ---
 
