@@ -1,4 +1,5 @@
-# DailyHunt-NewsAPI [Unofficial]
+# DailyHunt-NewsAPI [Unofficial] (Api is down)
+
 
 ---
 
